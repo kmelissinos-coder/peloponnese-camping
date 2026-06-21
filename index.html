@@ -371,3 +371,10 @@ document.getElementById('myOnly').addEventListener('click',e=>{state.myOnly=!sta
 document.querySelectorAll('.viewsw button').forEach(b=>b.addEventListener('click',()=>{
   state.view=b.dataset.view;document.querySelectorAll('.viewsw button').forEach(x=>x.classList.toggle('on',x===b));render();}));
 document.getElementById('theme').addEventListener('click',e=>{
+  const cur=document.documentElement.getAttribute('data-theme')==='light'?'':'light';
+  if(cur)document.documentElement.setAttribute('data-theme',cur);else document.documentElement.removeAttribute('data-theme');
+  e.target.textContent=cur?'☀️':'🌙';
+});
+</script>
+</body>
+</html>
